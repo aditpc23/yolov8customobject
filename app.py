@@ -43,7 +43,7 @@ except Exception as ex:
 
 # Sidebar Image/Video Config
 st.sidebar.header("Image/Video Config")
-source_radio = st.sidebar.radio("Select Source", ["Upload Image", "Telegram"])
+source_radio = st.sidebar.radio(" ", ["Upload Image"])
 
 def display_image(image, caption, use_column_width=True):
     """Helper function to display an image in Streamlit."""
