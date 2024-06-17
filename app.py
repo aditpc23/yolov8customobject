@@ -13,14 +13,14 @@ UPLOAD_DIR = 'ROOT / images'
 
 # Setting page layout
 st.set_page_config(
-    page_title="Object Detection using YOLOv8",
+    page_title="Door Lock Access",
     page_icon="🤖",
     layout="wide",
     initial_sidebar_state="expanded"
 )
 
 # Main page heading
-st.title("Object Detection And Tracking using YOLOv8")
+st.title("Door Lock Access Using YOLOv8")
 
 # Sidebar configuration
 st.sidebar.header("ML Model Config")
