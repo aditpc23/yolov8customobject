@@ -94,5 +94,5 @@ if source_radio == "Upload Image":
     if latest_image:
         load_and_display_image(latest_image)
 
-        else:
-            st.error("Please select a valid source type!")
+else:
+    st.error("Please select a valid source type!")
