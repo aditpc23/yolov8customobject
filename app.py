@@ -42,7 +42,7 @@ except Exception as ex:
     st.error(ex)
 
 # Sidebar Image/Video Config
-st.sidebar.header("Image/Video Config")
+st.sidebar.header("Image Config")
 source_radio = st.sidebar.radio(" ", ["Upload Image"])
 
 def display_image(image, caption, use_column_width=True):
