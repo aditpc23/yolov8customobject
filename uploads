@@ -4,19 +4,28 @@ from telegram.ext import Updater, CommandHandler, MessageHandler, Filters, Callb
 
 # Load your bot token from an environment variable or directly
 TELEGRAM_BOT_TOKEN = '7461035655:AAGWX7UlpESuItLmS7pLxWNYvXswouktnss'
+bot = Bot(token=TELEGRAM_BOT_TOKEN)
 
 # Set up directory for saving images
-UPLOAD_DIR = 'ROOT / 'images''
+UPLOAD_DIR = 'uploads'
+RESULT_DIR = 'results'
 os.makedirs(UPLOAD_DIR, exist_ok=True)
+os.makedirs(RESULT_DIR, exist_ok=True)
 
 def start(update: Update, context: CallbackContext) -> None:
     update.message.reply_text('Send me an image and I will process it!')
 
 def handle_image(update: Update, context: CallbackContext) -> None:
+    chat_id = update.message.chat_id
     photo_file = update.message.photo[-1].get_file()
     file_path = os.path.join(UPLOAD_DIR, f"{photo_file.file_id}.jpg")
     photo_file.download(file_path)
-    update.message.reply_text(f"Image saved to {file_path}")
+    
+    update.message.reply_text(f"Image saved to {file_path}. I will process it and send the result shortly.")
+    
+    # Save the chat ID to a file to retrieve it later
+    with open(f"{file_path}.chat_id", 'w') as f:
+        f.write(str(chat_id))
 
 def main() -> None:
     updater = Updater(TELEGRAM_BOT_TOKEN, use_context=True)
