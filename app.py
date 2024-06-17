@@ -88,9 +88,6 @@ if source_radio == settings.IMAGE:
                 boxes = res[0].boxes
 
                 if len(boxes) > 0:
-                    # Debugging: Log structure of box data
-                    st.write("Structure of box data:")
-                    st.write(boxes[0].data)
 
                     # Extract confidence scores and find the highest confidence box
                     highest_conf_box = None
