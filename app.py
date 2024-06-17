@@ -9,7 +9,7 @@ import settings
 import helper
 
 # Directory where Telegram bot saves images
-UPLOAD_DIR = 'ROOT / 'images''
+UPLOAD_DIR = 'ROOT / images'
 
 # Setting page layout
 st.set_page_config(
