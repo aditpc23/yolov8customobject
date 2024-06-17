@@ -26,7 +26,7 @@ st.title("Object Detection And Tracking using YOLOv8")
 st.sidebar.header("ML Model Config")
 
 # Model Options
-model_type = st.sidebar.radio("Select Task", ['Detection', 'Segmentation'])
+model_type = st.sidebar.radio(" ", ['Detection'])
 
 confidence = st.sidebar.slider("Select Model Confidence", 25, 100, 40) / 100
 
@@ -82,10 +82,7 @@ if source_radio == "Upload Image":
     if source_img:
         load_and_display_image(source_img)
 
-elif source_radio == "Telegram":
-    latest_image = None
-    st.sidebar.write("Upload an image via the Telegram bot and wait for it to process.")
-    
+
     if st.sidebar.button("Check for new images"):
         uploaded_images = list(Path(UPLOAD_DIR).glob("*.jpg"))
         if uploaded_images:
