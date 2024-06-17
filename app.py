@@ -90,9 +90,3 @@ if source_radio == "Upload Image":
             st.sidebar.success(f"Found new image: {latest_image.name}")
         else:
             st.sidebar.warning("No new images found.")
-
-    if latest_image:
-        load_and_display_image(latest_image)
-
-else:
-    st.error("Please select a valid source type!")
