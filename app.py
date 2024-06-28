@@ -1,4 +1,3 @@
-# Import necessary libraries
 from pathlib import Path
 import time
 import PIL.Image
@@ -9,7 +8,7 @@ import settings
 import helper
 
 # Directory where Telegram bot saves images
-UPLOAD_DIR = 'ROOT / images'
+UPLOAD_DIR = 'ROOT/images'
 
 # Setting page layout
 st.set_page_config(
@@ -81,7 +80,6 @@ if source_radio == "Upload Image":
     source_img = st.sidebar.file_uploader("Choose an image...", type=("jpg", "jpeg", "png", 'bmp', 'webp'))
     if source_img:
         load_and_display_image(source_img)
-
 
     if st.sidebar.button("Check for new images"):
         uploaded_images = list(Path(UPLOAD_DIR).glob("*.jpg"))
