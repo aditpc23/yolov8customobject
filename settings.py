@@ -17,7 +17,7 @@ IMAGE = 'Image'
 SOURCES_LIST = [IMAGE]
 
 # Images config
-IMAGES_DIR = ROOT / 'images'
+IMAGES_DIR = ROOT / 'uploaded_images'
 
 # Videos config
 VIDEO_DIR = ROOT / 'videos'
