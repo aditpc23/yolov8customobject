@@ -8,6 +8,7 @@ click==8.1.7
 contourpy==1.2.0
 cycler==0.12.1
 Cython==3.0.9
+fastapi=0.111.0
 filelock==3.13.1
 fonttools==4.50.0
 fsspec==2024.3.1
