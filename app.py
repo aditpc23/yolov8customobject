@@ -128,23 +128,4 @@ if source_radio == "Load from Uploaded Images":
         else:
             st.warning("No new images found.")
 
-# Running the app with a simple server to handle uploads
-if __name__ == "__main__":
-    from flask import Flask, request, jsonify
-    import os
 
-    app = Flask(__name__)
-
-    @app.route('/upload', methods=['POST'])
-    def upload_file():
-        if 'file' not in request.files:
-            return jsonify({'detail': 'No file part'}), 400
-        file = request.files['file']
-        if file.filename == '':
-            return jsonify({'detail': 'No selected file'}), 400
-        if file:
-            filename = secure_filename(file.filename)
-            file.save(os.path.join(UPLOAD_DIR, filename))
-            return jsonify({'detail': 'File uploaded successfully'}), 200
-
-    app.run(host="0.0.0.0", port=8501)
